@@ -13,10 +13,9 @@ namespace Shop.Model
         public int id { get; set; }
 
         [Required]
-        [StringLength(50)]
         public string title { get; set; }
 
-        [StringLength(50)]
+      
         public string NContent { get; set; }
 
         public DateTime? pTime { get; set; }

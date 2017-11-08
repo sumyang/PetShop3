@@ -43,6 +43,10 @@
     <Compile Include="IBannerService.cs" />
     <Compile Include="IBaseService.cs" />
     <Compile Include="INoticeService.cs" />
+    <Compile Include="IOAinfoService.cs" />
+    <Compile Include="IPReviewService.cs" />
+    <Compile Include="IProinfoService.cs" />
+    <Compile Include="IPSortService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

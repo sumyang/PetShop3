@@ -5,6 +5,7 @@
 
 <!DOCTYPE html>
 @using Shop.Model;
+@model Senparc.Weixin.MP.AdvancedAPIs.OAuth.OAuthUserInfo
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -18,11 +19,13 @@
     <script src="~/Scripts/js/index.js"></script>
 </head>
 <body>
+   
+    @*<h2>欢迎 @Model.nickname </h2>*@
     <!--ftop开始-->
     <div class="ftop">
         <div class="index_search">
             <input onclick="document.location='search.html'" type="text" placeholder="请输入您要搜索的产品">
-            <p><a href="gonggao.html"><img src="~/images/icon_05.png"><sup>11</sup></a></p>
+            <p><a href="@Url.Action("Notice","Home")"><img src="~/images/icon_05.png"><sup>11</sup></a></p>
         </div>
         <div style="clear: both;"></div>
     </div>
@@ -30,6 +33,7 @@
     <!--banner start-->
     <div class="swiper-container index_banner">
         <div class="swiper-wrapper">
+            @*k这里是轮播图k*@
             @foreach (Banner item in ViewBag.Banner as List<Banner>)
             {
                 <div class="swiper-slide"><a><img src="~/images/@item.imgages" alt=""></a></div>
@@ -58,6 +62,7 @@
                 <a class="swiper-slide" href="gonggao_xq.html"><i>最新</i>one冬虫夏草又名虫草，是我国民间惯用的一种名贵滋补...</a>
                 <a class="swiper-slide" href="gonggao_xq.html"><i>最热</i>two冬虫夏草又名虫草，是我国民间惯用的一种名贵滋补...</a>
                 <a class="swiper-slide" href="gonggao_xq.html"><i>最新</i>three冬虫夏草又名虫草，是我国民间惯用的一种名贵滋补...</a>
+                <a class="swiper-slide" href="gonggao_xq.html"><i>最新</i>four冬虫夏草又名虫草，是我国民间惯用的一种名贵滋补...</a>
             </div>
         </div>
     </div>
@@ -71,7 +76,32 @@
     <div class="index_main">
         <p class="index_mtitle"> <a class="on" href="#">热销</a> <a href="#">推荐</a> <a href="index_xianshi.html">限时</a></p>
         <ul>
+            @*k这里是产品的信息k*@
+            @foreach (ProductInfo item in ViewBag.Proinfo as List<ProductInfo>)
+            {
+                <li>
+                    <a href="product_xq.html"><img src="~/images/@item.Images"></a>
+                    <div class="product_text">
+                        <h2>
+                            <p>@item.Name</p>
+                            <span><img src="~/images/icon_06.png"><img src="~/images/icon_06.png"><img src="~/images/icon_06.png"><img src="~/images/icon_06.png"><img src="~/images/icon_07.png"></span>
+                        </h2>
+                        <p>@item.Describe</p>
+                        <h3>
+                            <p><i>￥</i><b>@item.Price</b><span>特级</span><span>甄选</span></p>
+                            <a href="product_xq.html">立即购买</a>
+                        </h3>
+                    </div>
+                </li>
+                //if(item.id)
+                //{
+                //    return;
+                //}
+            }
+            @*@for(ProductInfo item;item<4;item++)
+            {
 
+            }*@
             @*<li>
                 <a href="product_xq.html"><img src="~/images/index_img01.jpg"></a>
                 <div class="product_text">
@@ -130,19 +160,20 @@
 
     <!--fixft开始-->
     <div class="fixft">
-        <a href="index.html" class="current">
+        <a href="@Url.Action("index","Home")" class="current">
             <span><img src="~/images/navicon_45.png" class="img1"><img src="~/images/navicon_28.png" class="img2"></span>
             <i>首页</i>
         </a>
-        <a href="publish.html">
+        
+        <a href="@Url.Action("Sort","Home")">
             <span><img src="~/images/navicon_48.png" class="img1"><img src="~/images/navicon_30.png" class="img2"></span>
             <i>分类</i>
         </a>
-        <a href="shopcar.html">
+        <a href="@Url.Action("index","ShopCart")">
             <span><img src="~/images/navicon_50.png" class="img1"><img src="~/images/navicon_32.png" class="img2"><em>12</em></span>
             <i>购物车</i>
         </a>
-        <a href="center.html">
+        <a href="@Url.Action("index","OAthinfo")">
             <span><img src="~/images/navicon_42.png" class="img1"><img src="~/images/navicon_35.png" class="img2"></span>
             <i>我的</i>
         </a>

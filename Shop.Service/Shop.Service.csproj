@@ -43,7 +43,11 @@
     <Compile Include="BannerService.cs" />
     <Compile Include="BaseService.cs" />
     <Compile Include="NoticeService.cs" />
+    <Compile Include="OAinfoService.cs" />
+    <Compile Include="PReviewService.cs" />
+    <Compile Include="ProinfoService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PSortService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Shop.IRepository\Shop.IRepository.csproj">

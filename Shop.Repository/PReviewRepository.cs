@@ -5,11 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Shop.Model;
 using Shop.IRepository;
-
 namespace Shop.Repository
 {
-    class ProinfoRepository:BaseRepository<ProductInfo>,IProinfoRepository
+    class PReviewRepository:BaseRepository<ProductReview>,IPReviewRepository
     {
-       
     }
 }

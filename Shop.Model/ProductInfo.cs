@@ -25,13 +25,13 @@ namespace Shop.Model
         [StringLength(50)]
         public string Name { get; set; }
 
-        [StringLength(50)]
+        
         public string Describe { get; set; }
 
         [Column(TypeName = "money")]
         public decimal? Price { get; set; }
 
-        [StringLength(50)]
+       
         public string PContent { get; set; }
 
         [StringLength(50)]

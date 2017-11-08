@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Shop.Model;
-using Shop.IRepository;
-
-namespace Shop.Repository
+namespace Shop.IRepository
 {
-    class ProinfoRepository:BaseRepository<ProductInfo>,IProinfoRepository
+    public interface IPReviewRepository:IBaseRepository<ProductReview>
     {
-       
     }
 }
